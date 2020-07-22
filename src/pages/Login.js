@@ -1,11 +1,11 @@
 import React from 'react';
 import { LoginForm } from '../config/Forms';
 
-function Login() {
+function Login(props) {
     return (
     <div>
         <h2>Login</h2>
-        <LoginForm/>
+        <LoginForm  userLogin={email => props.userLogin(email)}/>
     </div>
     );
 }

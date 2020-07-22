@@ -11,7 +11,7 @@ import {
   import ForgotPass from '../pages/ForgotPass'
 
 
-function Routes() {
+function Routes(props) {
     return(
     <Router>
         <nav>
@@ -32,16 +32,16 @@ function Routes() {
           <hr/>
           <Switch>
             <Route exact path='/'>
-              <Home/>
+              <Home />
             </Route>
             <Route path='/CreateAccount'>
-              <CreateAcc/>
+              <CreateAcc addUser={user => props.addUser(user)}/>
             </Route>
             <Route path='/Login'>
-              <Login/>
+              <Login  userLogin={email => props.userLogin(email)}/>
             </Route>
             <Route path='/ForgotPassword'>
-              <ForgotPass/>
+              <ForgotPass userForgotPass={(email, password) => props.userForgotPass(email, password)} />
             </Route>
           </Switch>
         </nav>

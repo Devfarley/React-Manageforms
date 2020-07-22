@@ -1,11 +1,11 @@
 import React from 'react';
 import { ForgotPassForm } from '../config/Forms';
 
-function ForgotPass() {
+function ForgotPass(props) {
     return (
     <div>   
         <h2>Forgot Password</h2>
-        <ForgotPassForm/>
+        <ForgotPassForm userForgotPass={(email, password) => props.userForgotPass(email, password)}/>
     </div> 
     );
 }
